@@ -1,0 +1,15 @@
+# Empty
+### DOCKER HOSTS ###
+172.21.0.3                                ffbdfe0588c1 docker-simple-dns docker-hoster_docker-simple-dns_1 ffbdfe0588c1.docker.local docker-simple-dns.docker.local docker-hoster_docker-simple-dns_1.docker.local
+172.17.0.4                                friendly_dubinsky a884ea18028c friendly_dubinsky.docker.local a884ea18028c.docker.local
+2a01:4f9:3b:2023:d0ff:242:ac11:4          friendly_dubinsky a884ea18028c friendly_dubinsky.docker.local a884ea18028c.docker.local
+172.21.0.2                                coredns 9b979e3d9895 docker-hoster_coredns_1 coredns.docker.local 9b979e3d9895.docker.local docker-hoster_coredns_1.docker.local
+172.17.0.3                                elastic_curie foo.example.com elastic_curie.docker.local foo.example.com.docker.local
+2a01:4f9:3b:2023:d0ff:242:ac11:3          elastic_curie foo.example.com elastic_curie.docker.local foo.example.com.docker.local
+172.17.0.2                                xenodochial_chaplygin 1f0cf8eb5684 xenodochial_chaplygin.docker.local 1f0cf8eb5684.docker.local
+2a01:4f9:3b:2023:d0ff:242:ac11:2          xenodochial_chaplygin 1f0cf8eb5684 xenodochial_chaplygin.docker.local 1f0cf8eb5684.docker.local
+172.17.0.5                                elegant_murdock nginx elegant_murdock.docker.local nginx.docker.local
+2a01:4f9:3b:2023:d0ff:242:ac11:5          elegant_murdock nginx elegant_murdock.docker.local nginx.docker.local
+172.17.0.6                                great_chandrasekhar ece49414ef6d great_chandrasekhar.docker.local ece49414ef6d.docker.local
+2a01:4f9:3b:2023:d0ff:242:ac11:6          great_chandrasekhar ece49414ef6d great_chandrasekhar.docker.local ece49414ef6d.docker.local
+### DOCKER HOSTS ###

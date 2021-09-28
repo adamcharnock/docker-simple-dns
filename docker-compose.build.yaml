@@ -1,0 +1,23 @@
+version: '3.9'
+services:
+    coredns:
+        image: coredns/coredns
+        restart: always
+        expose:
+            - '53'
+            - '53/udp'
+        volumes:
+            - './docker/Corefile:/etc/coredns/Corefile'
+            - './docker/hosts:/etc/hosts'
+        command:
+          - '-conf'
+          - '/etc/coredns/Corefile'
+
+    docker-simple-dns:
+      build:
+        context: .
+      restart: always
+      volumes:
+        - './docker/hosts:/etc/hosts.external'
+        - '/var/run/docker.sock:/tmp/docker.sock'
+      command: ['docker_simple_dns', '--socket=/tmp/docker.sock', '--file=/etc/hosts.external', '--default-domain=docker.local']

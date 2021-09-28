@@ -1,0 +1,23 @@
+[tool.poetry]
+name = "docker-simple-dns"
+version = "0.1.0"
+description = ""
+authors = ["Adam Charnock <adam@adamcharnock.com>", "David Darias"]
+readme = "README.md"
+packages = [{include = "docker_simple_dns"}]
+
+[tool.poetry.dependencies]
+python = "^3.9"
+docker = "^5.0.2"
+
+[tool.poetry.scripts]
+docker_simple_dns = 'docker_simple_dns.runner:main'
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.pytest.ini_options]
+testpaths = [
+    "tests.py",
+]
