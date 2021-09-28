@@ -5,9 +5,11 @@ WORKDIR /code
 ADD pyproject.toml /code/
 ADD poetry.lock /code/
 ADD README.md /code/
-RUN pip install poetry==1.2.0a2
-RUN poetry config virtualenvs.create false
-RUN poetry install --without dev --no-interaction --no-root
+
+RUN pip install poetry==1.2.0a2 \
+    && poetry config virtualenvs.create false \
+    && poetry install --without dev --no-interaction --no-root
+
 ADD docker_simple_dns /code/docker_simple_dns
 RUN poetry install --without dev --no-interaction
 
