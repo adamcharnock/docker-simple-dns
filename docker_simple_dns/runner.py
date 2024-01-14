@@ -109,8 +109,7 @@ def main():
         update_hosts_file,
         hosts_path=hosts_path,
         ipv4=not args.no_ipv4,
-        ipv6=not args.no_ipv6,
-        hosts=hosts,
+        ipv6=not args.no_ipv6
     )
 
     # We will also need to call get_container_hosts() in a few places too.
@@ -141,7 +140,7 @@ def main():
         hosts += get_container_hosts_(container_id_=c["Id"])
 
     logger.info(f"Writing containers to hosts file")
-    update_hosts_file_()
+    update_hosts_file_(hosts=hosts)
     logger.info(f"Writing complete. Will now wait for docker events...")
 
     # Listen for events to keep the hosts file updated
@@ -154,13 +153,13 @@ def main():
             container_id = e["id"]
             logger.info(f"Received {status} event for {container_id}. Updating hosts file")
             hosts += get_container_hosts_(container_id)
-            update_hosts_file_()
+            update_hosts_file_(hosts=hosts)
 
         if status == "stop" or status == "die" or status == "destroy":
             container_id = e["id"]
             logger.info(f"Received {status} event for {container_id}. Updating hosts file")
             hosts = hosts.discard_container(container_id)
-            update_hosts_file_()
+            update_hosts_file_(hosts=hosts)
 
 
 def get_container_data(docker_client: docker.APIClient, container_id: str) -> dict:
